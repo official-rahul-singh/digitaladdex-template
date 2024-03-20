@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Digitalddex</title>
+        <!-- preload fonts -->
+        <link rel="preload" href="assets/fonts/sora-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/sora-v12-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/sora-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+      <!-- css -->
+      <link rel="stylesheet" href="assets/css/layout.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+       <!-- favicon -->
+       <link rel="icon" href="assets/img/fav icon.png">      
+      <style>
+         /* sora-regular - latin */
+         @font-face {
+         font-display: swap;
+         font-family: 'Sora';
+         font-style: normal;
+         font-weight: 400;
+         src: url('assets/fonts/sora-v12-latin-regular.woff2') format('woff2');
+         }
+         /* sora-600 - latin */
+         @font-face {
+         font-display: swap;
+         font-family: 'Sora';
+         font-style: normal;
+         font-weight: 600;
+         src: url('assets/fonts/sora-v12-latin-600.woff2') format('woff2');
+         }
+         /* sora-700 - latin */
+         @font-face {
+         font-display: swap;
+         font-family: 'Sora';
+         font-style: normal;
+         font-weight: 700;
+         src: url('assets/fonts/sora-v12-latin-700.woff2') format('woff2');
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="container d-flex align-items-center justify-content-between">
+            <div class="site-logo">
+               <a href="#"><img src="assets/img/site-logo.svg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="d-flex align-items-center r-menu">
+               <nav>
+                  <ul>
+                     <li>
+                        <a href="index.html">Top 10</a>
+                     </li>
+                     <li class="dropdown">
+                        <a href="#">Troubleshoot</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 448 512">
+                           <path
+                              d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                           </path>
+                        </svg>
+                        <ul>
+                           <li>
+                              <a href="#">How to</a>
+                           </li>
+                           <li>
+                              <a href="#">Reviews</a>
+                           </li>
+                           <li>
+                              <a href="#">Guide</a>
+                           </li>
+                           <li class="dropdown">
+                              <a href="#">PHP &amp; MySQL</a>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                 viewBox="0 0 448 512">
+                                 <path
+                                    d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                                 </path>
+                              </svg>
+                              <ul>
+                                 <li>
+                                    <a href="#">How to</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">Reviews</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">Guide</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">PHP &amp; MySQL</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#">How to</a>
+                     </li>
+                     <li>
+                        <a href="#">Reviews</a>
+                     </li>
+                     <li>
+                        <a href="#">Guide</a>
+                     </li>
+                  </ul>
+                  <div class="cancel-btn" onclick="toggleButtons()">
+                     <svg fill="#000" xmlns="http://www.w3.org/2000/svg" height="20" width="20"
+                        viewBox="0 0 384 512">
+                        <path
+                           d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
+                        </path>
+                     </svg>
+                  </div>
+               </nav>
+               <div class="search-form">
+                  <form action="">
+                     <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                           fill="none">
+                           <path
+                              d="M7.333 12.667A5.333 5.333 0 1 0 7.333 2a5.333 5.333 0 0 0 0 10.667ZM14 14l-2.9-2.9"
+                              stroke="#367EA1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           </path>
+                        </svg>
+                     </button>
+                     <input type="search" name="" id="" placeholder="Search" required>
+                  </form>
+               </div>
+               <div class="toggle-slide-btn" onclick="toggleButtons()">
+                  <svg width="20" height="20" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z">
+                     </path>
+                  </svg>
+               </div>
+            </div>
+            <div class="mob-search-btn">
+               <span class="search-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     viewBox="0 0 16 16" fill="none">
+                     <path d="M7.333 12.667A5.333 5.333 0 1 0 7.333 2a5.333 5.333 0 0 0 0 10.667ZM14 14l-2.9-2.9"
+                        stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+               </span>
+            </div>
+         </div>
+      </header>
+      
+      <div class="dg-pg-header">
+         <div class="container">
+            <div class="m-auto">
+               <p id="breadcrumbs"><span><span><a href="https://getassist.net/category/social-media/">Social Media</a></span> » <span><a href="https://getassist.net/category/social-media/facebook/">Facebook</a></span></span></p>
+               <div class="social-media">
+                  <ul>
+                     <li>
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8z"/></svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 512 512"><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3M447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <h1>30 Popular & Best Google Doodle Games — Dive Into the
+               Mini Arcade
+            </h1>
+            <div class="blog-details">
+               <ul>
+                  <li><a href="#"><img src="https://getassist.net/wp-content/uploads/2023/12/Alex-Jones-newsize.webp"
+                     alt=""> Manpreet Kaur Sandhu</a></li>
+                  <li>
+                     <a href="#">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" stroke="#367EA2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.667 3.007H3.333C2.597 3.007 2 3.604 2 4.34v9.334c0 .736.597 1.333 1.333 1.333h9.334c.736 0 1.333-.597 1.333-1.333V4.34c0-.736-.597-1.333-1.333-1.333m-2-1.333V4.34M5.333 1.674V4.34M2 7.007h12"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 .34h16v16H0z"/></clipPath></defs></svg>
+                        Published May 03, 2023
+                     </a>
+                  </li>
+                  <li>
+                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M7.079.561a3.508 3.508 0 0 0-1.452 1.085l-.27.373h-.901c-1.082.01-1.472.186-2.173.96-.58.642-.831 1.406-.761 2.347.05.63.05.63-.32.899C.53 6.731 0 7.806 0 8.685c0 .878.53 1.953 1.202 2.46.37.268.37.268.32.899-.07.94.18 1.705.76 2.346.702.775 1.092.95 2.174.96h.9l.271.373a2.994 2.994 0 0 0 2.433 1.22c.971 0 1.862-.445 2.433-1.22l.27-.372h.902c1.08-.01 1.471-.186 2.172-.961.581-.641.831-1.406.761-2.346-.05-.63-.05-.63.32-.9.671-.506 1.202-1.58 1.202-2.46 0-.878-.53-1.953-1.201-2.459-.37-.269-.37-.269-.32-.9.07-.919-.171-1.653-.742-2.314-.69-.796-1.101-.982-2.192-.992h-.901l-.27-.373A2.994 2.994 0 0 0 8.06.426c-.33 0-.77.063-.981.135Zm4.486 5.54c.1.114.18.351.18.527 0 .269-.29.62-2.193 2.584-1.892 1.953-2.233 2.263-2.493 2.263-.25 0-.5-.196-1.492-1.23-1.001-1.044-1.192-1.292-1.192-1.55 0-.424.28-.734.671-.734.26 0 .45.145 1.112.827.44.455.84.827.9.827.06 0 .912-.837 1.903-1.86 1.562-1.613 1.842-1.86 2.113-1.86.18 0 .38.082.49.206Z"
+                           fill="#FF0909" />
+                     </svg>
+                     Fact checked by <a href="#">Manpreet Kaur Sandhu</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="container all-page">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="co-auth">
+                  <div class="co-img">
+                     <a href="#"> <img src="https://getassist.net/wp-content/uploads/2023/12/Zayn-Tindall.webp"
+                        class="img-fluid" alt=""></a>
+                  </div>
+                  <div>
+                     <span>Co-authored by :</span>
+                     <div><a href="#" class="auth-name">Manpreet Kaur Sandhu</a></div>
+                  </div>
+               </div>
+               <div id="table_of_content">
+                  <div class="thead">Table of Contents</div>
+                  <ul class="table-list">
+                     <li class=""><a href="#how-to-decide-on-a-free-vpn-for-torrenting">How to Decide On a Free VPN
+                        for Torrenting?</a>
+                     </li>
+                     <li><a href="#top-6-best-free-vpns-for-torrenting">Top 6 Best Free VPNs for Torrenting</a></li>
+                     <li><a href="#which-free-torrent-vpns-should-be-avoided">Which Free Torrent VPNs Should be
+                        Avoided?</a>
+                     </li>
+                     <ul>
+                        <li><a href="#which-free-torrent-vpns-should-be-avoided">Which Free Torrent VPNs Should be
+                           Avoided?</a>
+                        </li>
+                        <li><a href="#which-free-torrent-vpns-should-be-avoided">Which Free Torrent VPNs Should be
+                           Avoided?</a>
+                        </li>
+                     </ul>
+                     <li><a href="#dangers-associated-with-using-a-free-torrenting-vpn">Dangers Associated With Using
+                        a Free Torrenting VPN</a>
+                     </li>
+                     <li><a href="#conclusive-thoughts">Conclusive Thoughts</a></li>
+                     <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-9">
+               <p>People are increasingly concerned about <a href="#">Doodle Games?</a> their online safety and security as the digital landscape has
+                  shifted abruptly. Data leaks are quite common these days, so people now want to be secure while even
+                  surfing the internet.
+               </p>
+               <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="600"
+                  height="300"
+                  src="https://cleanersuite.com/wp-content/uploads/2024/02/Best-Free-VPNs-for-Torrenting.webp"
+                  alt="Best Free VPNs for Torrenting" class="wp-image-5060 img-fluid"
+                  srcset="https://cleanersuite.com/wp-content/uploads/2024/02/Best-Free-VPNs-for-Torrenting.webp 600w, https://cleanersuite.com/wp-content/uploads/2024/02/Best-Free-VPNs-for-Torrenting-300x150.webp 300w"
+                  sizes="(max-width: 600px) 100vw, 600px"></figure>
+               <p>The right way to make this possible is by choosing the best free VPN for torrenting that aligns with
+                  your specific needs. Free VPNs with P2P are a good option for you if you wish to encrypt your data
+                  online.
+               </p>
+               <blockquote class="wp-block-quote">
+                  <p>“Did you come here for something in particular or just general Riker-bashing? And blowing into
+                     maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur
+                     aboard.
+                  </p>
+               </blockquote>
+               <p>This informative guide will resolve all your VPN worries by providing a detailed review of the
+                  enlisted VPNs. Moreover, you will no longer have to search for the <a
+                     href="https://cleanersuite.com/best-vpn-for-torrenting-reddit/">best VPN for torrenting on
+                  Reddit</a>.
+               </p>
+               <p>Read more to know about the best six free VPNs for torrenting and P2P in 2024.</p>
+               <h2>What are Google <a href="#">Doodle Games?</a></h2>
+               <p>To answer why, the platform has released a public announcement claiming that after running an
+                  experiment on small-scale influencers. From the results, it has been observed that creators are
+                  facing a massive backlash by being unfairly targeted in the form of dislikes.
+               </p>
+               <div class="dg-widget">
+                  <div class="dg-widget-title sources">
+                     Sources
+                  </div>
+                  <div class="dg-widget-content">
+                     <p> To answer why, the platform has released a public announcement claiming that after running
+                        an
+                        experiment on small-scale influencers. From the results, it has been observed that creators
+                        are
+                        facing a massive backlash by being unfairly targeted in the form of dislikes.
+                     </p>
+                     <ul>
+                        <li>They are considered essential metrics for both content creators and viewers.</li>
+                        <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                        <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                        <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                           engagement besides views and subscriptions.
+                        </li>
+                     </ul>
+                     <ol>
+                        <li>They are considered essential metrics for both content creators and viewers.</li>
+                        <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                        <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                        <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                           engagement besides views and subscriptions.
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="dg-widget">
+                  <div class="dg-widget-title notes">
+                     Notes
+                  </div>
+                  <div class="dg-widget-content">
+                     <p> To answer why, the platform has released a public announcement claiming that after running
+                        an
+                        experiment on small-scale influencers. From the results, it has been observed that creators
+                        are
+                        facing a massive backlash by being unfairly targeted in the form of dislikes.
+                     </p>
+                     <ul>
+                        <li>They are considered essential metrics for both content creators and viewers.</li>
+                        <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                        <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                        <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                           engagement besides views and subscriptions.
+                        </li>
+                     </ul>
+                     <ol>
+                        <li>They are considered essential metrics for both content creators and viewers.</li>
+                        <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                        <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                        <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                           engagement besides views and subscriptions.
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="dg-widget">
+                  <div class="dg-widget-title also-read">
+                     Also Read
+                  </div>
+                  <div class="dg-widget-content">
+                     <div class="dg-card d-grid-20 border-bt">
+                        <div class="img-placeholder">
+                           <a href="#">
+                           <img src="https://ityug247.com/wp-content/uploads/2024/01/content.webp" alt=""
+                              class="img-fluid">
+                           </a>
+                        </div>
+                        <div class="dg-card-content">
+                           <a href="#" class="cat-g">Digitaladdex</a>
+                           <a href="#" class="dg-title">Why Companies are Turning to Proxies for Why Companies are Turning to Proxies for</a>
+                        </div>
+                     </div>
+                     <div class="dg-card d-grid-20 border-bt">
+                        <div class="img-placeholder">
+                           <a href="#">
+                           <img src="https://ityug247.com/wp-content/uploads/2023/12/social-media-and-mental-health-1.webp"
+                              alt="" class="img-fluid">
+                           </a>
+                        </div>
+                        <div class="dg-card-content">
+                           <a href="#" class="cat-g">Digitaladdex</a>
+                           <a href="#" class="dg-title">Why Companies are Turning to Proxies for Why Companies are Turning to Proxies for</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <h3>How to See the Dislikes on YouTube Using Browser?</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <ul>
+                  <li>They are considered essential metrics for both content creators and viewers.</li>
+                  <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                  <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                  <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                     engagement besides views and subscriptions.
+                  </li>
+               </ul>
+               <ol>
+                  <li>They are considered essential metrics for both content creators and viewers.</li>
+                  <li>The number of dislikes serves as feedback on the content that requires improvement.</li>
+                  <li>It can be used to measure whether the video was helpful to the users or not.</li>
+                  <li>Likes, dislikes, and comments are considered powerful tools to measure active audience
+                     engagement besides views and subscriptions.
+                  </li>
+               </ol>
+               <h4>How to See the Dislikes on YouTube Using Browser?</h4>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+        
+<!-- second -->
+               <div class="widget-pn-container">
+                   <div class="widget-pn-col">
+                     <div class="pn-header">
+                        Positives
+                     </div>
+                     <div class="pc-body">
+                        <p>Lorem ipsum dolor <a href="#">Doodle Games?</a> sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                           doloremque esse id?
+                        </p>
+                        <ul>
+                           <li>Website’s type</li>
+                           <li>Use of the website</li>
+                           <li>Movie Resolutions</li>
+                           <li>Movie Genres</li>
+                        </ul>
+                     </div>
+                   </div>
+                  
+                   <div class="widget-pn-col">
+                        <div class="pn-header">
+                           Negatives
+                        </div>
+                        <div class="pc-body">
+                           <p>Lorem ipsum dolor <a href="#">Doodle Games?</a> sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                              doloremque esse id?
+                           </p>
+                           <ul>
+                              <li>Website’s type</li>
+                              <li>Use of the website</li>
+                              <li>Movie Resolutions</li>
+                              <li>Movie Genres</li>
+                           </ul>
+                        </div>
+                        </div>
+                  
+               </div>
+<!-- second -->
+
+
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+       
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <figure class="wp-block-table is-style-stripes">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Name of the website</th>
+                           <th>Content</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Website’s type</td>
+                           <td>Torrent website</td>
+                        </tr>
+                        <tr>
+                           <td>Use of the website</td>
+                           <td>Download and transfer torrent files</td>
+                        </tr>
+                        <tr>
+                           <td>Movie Resolutions</td>
+                           <td>360p, 480p, 720p, 1080p</td>
+                        </tr>
+                        <tr>
+                           <td>Movie Genres</td>
+                           <td>Action, Comedy, Thriller, Romance</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </figure>
+               <h5>How to See the Dislikes on YouTube Using Browser?</h5>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <div class="blog-author-details">
+                  <a href="#"><img src="https://getassist.net/wp-content/uploads/2023/12/Zayn-Tindall.webp"
+                     class="img-fluid" alt="Zayn Tindall"></a>
+                  <a href="#" class="dg-title">Author: Zayn Tindall</a>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                     when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                     distribution of letters, as opposed to using 'Content here, content here', making
+                  </p>
+               </div>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <figure class="wp-block-image size-full"><img fetchpriority="high" class="img-fluid" decoding="async"
+                  width="600" height="401"
+                  src="https://getassist.net/wp-content/uploads/2024/01/Modern-Survival-Skills.webp"
+                  alt="Modern Survival Skills"
+                  srcset="https://getassist.net/wp-content/uploads/2024/01/Modern-Survival-Skills.webp 600w, https://getassist.net/wp-content/uploads/2024/01/Modern-Survival-Skills-300x201.webp 300w, https://getassist.net/wp-content/uploads/2024/01/Modern-Survival-Skills-150x100.webp 150w"
+                  sizes="(max-width: 600px) 100vw, 600px"></figure>
+               <h6>How to See the Dislikes on YouTube Using Browser?</h6>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat amet dolorem quisquam commodi nam
+                  doloremque esse id? Iusto possimus omnis, fugiat blanditiis dignissimos quo temporibus cum error
+                  earum suscipit deleniti?
+               </p>
+               <h2 id="4">Frequently Asked Questions</h2>
+               <div class="accordions">
+                  <details open="">
+                     <summary>
+                        Alright, but what <a href="#">Doodle Games?</a> exactly do you do ?
+                     </summary>
+                     <div class="content">
+                        <p><strong>Ans:</strong> The basic plan allows one account, the standard plan allows
+                           two, and the premium plan allows up to 4 accounts.
+                        </p>
+                     </div>
+                  </details>
+                  <details>
+                     <summary>
+                        Alright, but what exactly do you do ?
+                     </summary>
+                     <div class="content">
+                        <p><strong>Ans:</strong> The basic plan allows one account, the standard plan allows
+                           two, and the premium plan allows up to 4 accounts.
+                        </p>
+                     </div>
+                  </details>
+                  <details>
+                     <summary>
+                        Alright, but what exactly do you do ?
+                     </summary>
+                     <div class="content">
+                        <p><strong>Ans:</strong> The basic plan allows one account, the standard plan allows
+                           two, and the premium plan allows up to 4 accounts.
+                        </p>
+                     </div>
+                  </details>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- related post -->
+      <div class="container">
+              <div class="sep sec-gap">
+               Related Post
+            </div>
+            <div class="row row-gap">
+               <div class="col-lg-3 col-md-6">
+                  <div class="dg-card">
+                     <div class="img-placeholder">
+                        <a href="#">
+                        <img src="https://ityug247.com/wp-content/uploads/2023/10/ml-mean-in-texting.webp" alt="" class="img-fluid">
+                        </a>
+                     </div>
+                     <div class="dg-card-content">
+                      <span class="cat-g"><svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="1.5" cy="1.5" r="1.5" fill="#367ea1"></circle>
+                      </svg><a href="#" class="cat-g">Digitaladdex</a></span>
+                        <a href="#" class="dg-title">What Are the Crucial Components of a Successful Marketing
+                        Strategy?</a>
+                        <div class="dg-timeline">
+                         <span class="d-flex align-items-center">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.95 12.25v-1.167A2.333 2.333 0 0 0 9.617 8.75H4.951a2.333 2.333 0 0 0-2.334 2.333v1.167m4.668-5.833a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667Z" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                               </path>
+                            </svg>
+                            <a href="#">Alex Jones</a>
+                         </span>
+                   </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="dg-card">
+                     <div class="img-placeholder">
+                        <a href="#">
+                        <img src="https://ityug247.com/wp-content/uploads/2023/10/ml-mean-in-texting.webp" alt="" class="img-fluid">
+                        </a>
+                     </div>
+                     <div class="dg-card-content">
+                      <span class="cat-g"><svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="1.5" cy="1.5" r="1.5" fill="#367ea1"></circle>
+                      </svg><a href="#" class="cat-g">Digitaladdex</a></span>
+                        <a href="#" class="dg-title">What Are the Crucial Components of a Successful Marketing
+                        Strategy?</a>
+                        <div class="dg-timeline">
+                         <span class="d-flex align-items-center">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.95 12.25v-1.167A2.333 2.333 0 0 0 9.617 8.75H4.951a2.333 2.333 0 0 0-2.334 2.333v1.167m4.668-5.833a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667Z" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                               </path>
+                            </svg>
+                            <a href="#">Alex Jones</a>
+                         </span>
+                   </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="dg-card">
+                     <div class="img-placeholder">
+                        <a href="#">
+                        <img src="https://ityug247.com/wp-content/uploads/2023/10/ml-mean-in-texting.webp" alt="" class="img-fluid">
+                        </a>
+                     </div>
+                     <div class="dg-card-content">
+                      <span class="cat-g"><svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="1.5" cy="1.5" r="1.5" fill="#367ea1"></circle>
+                      </svg><a href="#" class="cat-g">Digitaladdex</a></span>
+                        <a href="#" class="dg-title">What Are the Crucial Components of a Successful Marketing
+                        Strategy?</a>
+                        <div class="dg-timeline">
+                         <span class="d-flex align-items-center">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.95 12.25v-1.167A2.333 2.333 0 0 0 9.617 8.75H4.951a2.333 2.333 0 0 0-2.334 2.333v1.167m4.668-5.833a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667Z" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                               </path>
+                            </svg>
+                            <a href="#">Alex Jones</a>
+                         </span>
+                   </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="dg-card">
+                     <div class="img-placeholder">
+                        <a href="#">
+                        <img src="https://ityug247.com/wp-content/uploads/2023/10/ml-mean-in-texting.webp" alt="" class="img-fluid">
+                        </a>
+                     </div>
+                     <div class="dg-card-content">
+                      <span class="cat-g"><svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="1.5" cy="1.5" r="1.5" fill="#367ea1"></circle>
+                      </svg><a href="#" class="cat-g">Digitaladdex</a></span>
+                        <a href="#" class="dg-title">What Are the Crucial Components of a Successful Marketing
+                        Strategy?</a>
+                        <div class="dg-timeline">
+                         <span class="d-flex align-items-center">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.95 12.25v-1.167A2.333 2.333 0 0 0 9.617 8.75H4.951a2.333 2.333 0 0 0-2.334 2.333v1.167m4.668-5.833a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667Z" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                               </path>
+                            </svg>
+                            <a href="#">Alex Jones</a>
+                         </span>
+                   </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+
+      <button id="myBtn" title="Go to top">
+         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="#FFF"><path d="M2.721 10.816 1.905 10a.88.88 0 0 1 0-1.247l7.144-7.146a.88.88 0 0 1 1.247 0l7.142 7.142a.88.88 0 0 1 0 1.247l-.816.816a.88.88 0 0 1-1.261-.015l-4.216-4.425v10.565a.88.88 0 0 1-.882.882H9.087a.88.88 0 0 1-.882-.882V6.372L3.982 10.8a.876.876 0 0 1-1.261.015Z"/></svg>
+      </button>
+      <footer>
+         <div class="container">
+            <div class="row row-gap">
+               <div class="col-lg-9">
+                  <div class="footer-title">
+                     Popular Categories
+                  </div>
+                  <div class="footer-list">
+                     <ul>
+                        <li>
+                           <a href="category.html">About us</a>
+                        </li>
+                        <li>
+                           <a href="single-pg.html">Blogs</a>
+                        </li>
+                        <li>
+                           <a href="error-pg.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                           <a href="contact.html">Get in touch</a>
+                        </li>
+                        <li>
+                           <a href="author.html">Authors</a>
+                        </li>
+                        <li>
+                           <a href="contact.html">Terms of Use</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="footer-title">
+                     Important Links
+                  </div>
+                  <div class="footer-nav">
+                     <ul>
+                        <li>
+                           <a href="index.html">index</a>
+                        </li>
+                        <li>
+                           <a href="single-pg.html">Single page</a>
+                        </li>
+                        <li>
+                           <a href="category.html">Catagory</a>
+                        </li>
+                        <li>
+                           <a href="error-pg.html">Error page</a>
+                        </li>
+                        <li>
+                           <a href="search-not-found.html">Search not found</a>
+                        </li>
+                        <li>
+                           <a href="single-author.html">Single author</a>
+                        </li>
+                        <li>
+                           <a href="thank-you.html">Thank you</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class="footer-title">
+                     Contact Us
+                  </div>
+                  <div class="e-mail">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 640 512"><path fill="#367ea1" d="M128 0c-17.7 0-32 14.3-32 32v192h96v-32c0-35.3 28.7-64 64-64h224V32c0-17.7-14.3-32-32-32zm128 160c-17.7 0-32 14.3-32 32v32h96c35.3 0 64 28.7 64 64v128h192c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm240 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16M64 256c-17.7 0-32 14.3-32 32v13l155.1 114.9c1.4 1 3.1 1.6 4.9 1.6s3.5-.6 4.9-1.6L352 301v-13c0-17.7-14.3-32-32-32zm288 84.8L216 441.6c-6.9 5.1-15.3 7.9-24 7.9s-17-2.8-24-7.9L32 340.8V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32z"/></svg>
+                     <a href="mailto:Digitaladdex@gmail.com"> Digitaladdex@gmail.com</a>
+                  </div>
+                  <div class="social-media">
+                     <div class="contact-h">
+                        Follow us on Social Media
+                     </div>
+                     <ul>
+                        <li>
+                           <a href="#">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8z"/></svg>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 512 512"><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3M447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-12">
+                  <p class="disc"><strong>DISCLAIMER:</strong> All the information, media, links, and other data provided
+                     on the website
+                     are meant for reference as well as information purposes only. We do not claim the rightness of the
+                     information as we have utilized the web portals to collect and sort the information. Any user
+                     continuing
+                     with the steps and services is solely responsible to check for the correctness of the resources. We do
+                     not take any liability for the errors, omissions, and services. Furthermore, we are not associated
+                     with
+                     the third-party sites mentioned and hold no authority over the service offered by them.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="copy-right">
+            <p>© Copyright 2024 All Right Reserved</p>
+         </div>
+      </footer>
+      <script src="assets/js/main.js"></script>
+   </body>
+</html>
